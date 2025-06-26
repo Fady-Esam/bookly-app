@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:new_bookly_app/Features/home/domain/entities/book_entity.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../../../../core/widgets/custom_action_button.dart';
 import 'custom_best_seller_rating.dart';
 import 'custom_book_details_app_bar.dart';
+import 'custom_book_item.dart';
 import 'similar_books_list_view.dart';
 
 class BookDtailsViewBody extends StatelessWidget {
-  const BookDtailsViewBody({super.key});
+  const BookDtailsViewBody({super.key, required this.bookEntity});
 
-  // final BookEntity bookEntity;
+  final BookEntity bookEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +26,14 @@ class BookDtailsViewBody extends StatelessWidget {
                 const SizedBox(height: 4),
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.5,
-                  // child: const CustomBookItem(),
+                  child: CustomBookItem(
+                    bookEntity: bookEntity,
+                  ),
                 ),
-                const Text(
-                  'Title',
+                Text(
+                  bookEntity.title ??"",
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 23,
                     fontWeight: FontWeight.w700,
                     fontStyle: FontStyle.italic,
@@ -36,7 +41,7 @@ class BookDtailsViewBody extends StatelessWidget {
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  'title',
+                  bookEntity.authorName ?? "",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 18,
@@ -53,10 +58,13 @@ class BookDtailsViewBody extends StatelessWidget {
                   padding: const EdgeInsets.only(right: 10),
                   child: CustomActionButton(
                     onTap: () async {
-                      // var url = Uri.parse(bookModel.volumeInfo!.previewLink!);
-                      // if (await canLaunchUrl(url)) {
-                      //   await launchUrl(url);
-                      // }
+                      if(bookEntity.previewLink == null){
+                        return;
+                      }
+                      var url = Uri.parse(bookEntity.previewLink!);
+                      if (await canLaunchUrl(url)) {
+                        await launchUrl(url);
+                      }
                     },
                   ),
                 ),

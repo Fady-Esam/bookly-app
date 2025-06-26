@@ -55,4 +55,49 @@ class HomeRepoImpl implements HomeRepo {
       return left(ServerFailure(errMessage: e.toString()));
     }
   }
+
+  @override
+  Future<Either<Failure, List<BookEntity>>> getSimilarBooks(
+      String category) async {
+    try {
+      List<BookEntity> similarLocalBooks =
+          homeLocalDataSource.fetchLocalSimilarBooks();
+      if (similarLocalBooks.isNotEmpty) {
+        return right(similarLocalBooks);
+      }
+      var result = await homeRemoteDataSource.getSimilarBooks(category);
+      return result.fold(
+        (failure) => left(ServerFailure(errMessage: failure.errMessage)),
+        (books) => right(books),
+      );
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(errMessage: e.toString()));
+    }
+  }
+
+
+
+  @override
+  Future<Either<Failure, List<BookEntity>>> getSearchBooks(String title) async {
+    try {
+      List<BookEntity> searchedLocalBooks =
+          homeLocalDataSource.fetchLocalSearchedBooks();
+      if (searchedLocalBooks.isNotEmpty) {
+        return right(searchedLocalBooks);
+      }
+      var result = await homeRemoteDataSource.getSearchBooks(title);
+      return result.fold(
+        (failure) => left(ServerFailure(errMessage: failure.errMessage)),
+        (books) => right(books),
+      );
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(errMessage: e.toString()));
+    }
+  }
 }

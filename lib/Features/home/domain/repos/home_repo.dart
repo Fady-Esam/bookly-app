@@ -5,4 +5,6 @@ import 'package:new_bookly_app/core/errors/failure.dart';
 abstract class HomeRepo {
   Future<Either< Failure, List<BookEntity>>> fetchFeaturedBooks({int pageIndex = 0});
   Future<Either< Failure, List<BookEntity>>> fetchNewestBooks();
+  Future<Either<Failure, List<BookEntity>>> getSimilarBooks(String category);
+  Future<Either<Failure, List<BookEntity>>> getSearchBooks(String title);
 }

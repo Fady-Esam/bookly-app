@@ -1,5 +1,8 @@
+import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:new_bookly_app/Features/home/data/models/book_model/book_model.dart';
+import 'package:new_bookly_app/core/errors/failure.dart';
 
 import '../../../../core/utils/api_service.dart';
 import '../../domain/entities/book_entity.dart';
@@ -35,5 +38,47 @@ class HomeRemoteDataSourceImpl implements HomeRemoteDataSource {
     var booksBox = Hive.box<BookEntity>('newestBooks');
     await booksBox.addAll(newestBooks);
     return newestBooks;
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> getSimilarBooks(
+      String category) async {
+    try {
+      var res = await apiService.get(
+          endPoint:
+              'volumes?q=subject:$category&Filtering=free-ebooks&Sorting=relevance');
+      List<BookModel> books = [];
+      for (var item in res['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+      var booksBox = Hive.box<BookEntity>('similarBooks');
+      await booksBox.addAll(books);
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(errMessage: e.toString()));
+    }
+  }
+
+  @override
+  Future<Either<Failure, List<BookModel>>> getSearchBooks(String title) async {
+    try {
+      var res = await apiService.get(
+          endPoint: 'volumes?q=subject:$title&Filtering=free-ebooks');
+      List<BookModel> books = [];
+      for (var item in res['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+      var booksBox = Hive.box<BookEntity>('searchedBooks');
+      await booksBox.addAll(books);
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(errMessage: e.toString()));
+    }
   }
 }

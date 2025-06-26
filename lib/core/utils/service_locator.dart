@@ -24,4 +24,6 @@ void setUpServiceLocator() {
 
   getIt.registerSingleton<FetchNewestdBooksUseCase>(
       FetchNewestdBooksUseCase(homeRepo: getIt.get<HomeRepoImpl>()));
+
+
 }

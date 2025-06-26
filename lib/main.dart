@@ -1,14 +1,20 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:new_bookly_app/Features/home/data/data_sources/home_local_data_source_impl.dart';
+import 'package:new_bookly_app/Features/home/data/data_sources/home_remote_data_source_impl.dart';
+import 'package:new_bookly_app/Features/home/data/repos/home_repo_impl.dart';
 import 'package:new_bookly_app/Features/home/domain/use_cases/fetch_featured_books_use_case.dart';
 import 'package:new_bookly_app/Features/home/presentation/manager/featured_books/featured_books_cubit.dart';
 import 'package:new_bookly_app/Features/home/presentation/manager/newest_books/newest_books_cubit.dart';
+import 'package:new_bookly_app/core/utils/api_service.dart';
 import 'package:new_bookly_app/core/utils/service_locator.dart';
 import 'package:new_bookly_app/core/utils/simple_bloc_observer.dart';
 import 'Features/home/domain/entities/book_entity.dart';
 import 'Features/home/domain/use_cases/fetch_newest_books_use_case.dart';
+import 'Features/search/presentation/manager/cubit/search_books_cubit.dart';
 import 'constants.dart';
 import 'core/utils/app_router.dart';
 
@@ -19,6 +25,8 @@ void main() async {
   Hive.registerAdapter(BookEntityAdapter());
   await Hive.openBox<BookEntity>('featuredBooks');
   await Hive.openBox<BookEntity>('newestBooks');
+  await Hive.openBox<BookEntity>('similarBooks');
+  await Hive.openBox<BookEntity>('searchedBooks');
   runApp(const BooklyApp());
 }
 

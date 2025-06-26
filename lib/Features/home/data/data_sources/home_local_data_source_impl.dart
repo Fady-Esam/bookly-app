@@ -20,4 +20,14 @@ class HomeLocalDataSourceImpl implements HomeLocalDataSource {
     var booksBox = Hive.box<BookEntity>('newestBooks');
     return booksBox.values.toList();
   }
+  @override
+  List<BookEntity> fetchLocalSimilarBooks() {
+    var booksBox = Hive.box<BookEntity>('similarBooks');
+    return booksBox.values.toList();
+  }
+  @override
+  List<BookEntity> fetchLocalSearchedBooks() {
+    var booksBox = Hive.box<BookEntity>('searchedBooks');
+    return booksBox.values.toList();
+  }
 }
