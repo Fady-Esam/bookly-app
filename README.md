@@ -1,16 +1,58 @@
-# clean_architecture
+# 📚 Flutter Bookly App
 
-A new Flutter project.
+An elegant Flutter app for browsing and reading books integrated with RESTful API using the **Google Books API**.  
+Built with clean architecture, BLoC, and local caching using **Hive**.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features
 
-A few resources to get you started if this is your first Flutter project:
+- 📚 Browse books featured, and best sellers
+- 📖 View Detailed Book Information includeing title, author, description, rating, preview links, and more
+- 💾 Caching locally with `hive` for offline support
+- 📦 RESTful API integration 
+- 🎨 Custom UI components for rich, elegant book displays
+- ✨ Splash Screen with smooth animation and transition to the home screen
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ Languages & Tools
+
+<p align="left"> 
+        <img src="https://skillicons.dev/icons?i=flutter,dart,vscode,git,github" alt="Tech stack icons" />
+        <img src="https://skillicons.dev/icons?i=postman" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMPq4YNrCDzxfBUu7I4wlkncj7XnUgF8rl1A&s" alt="Hive" width="48" height="48"/>
+</p>
+
+---
+
+
+## 📦 Packages Used
+
+- 🎨 `font_awesome_flutter`
+- 🔤 `google_fonts` 
+- 🚦 `go_router`
+- 🔁 `flutter_bloc` 
+- 🧮 `dartz` 
+- 🌐 `dio`
+- 🛠️ `get_it` 
+- 🖼️ `cached_network_image`
+- ✨ `shimmer` 
+- 🔗 `url_launcher` 
+- 🌍 `http` 
+- 🐝 `hive` / `hive_flutter`
+
+---
+
+## 📫 Connect With Me
+<h5 align="left"> 
+<a href="https://www.linkedin.com/in/fady-esam/" target="_blank"> 
+  <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="Fady Esam" height="45" width="45" /> 
+  </a> 
+   &nbsp;
+  <a href="mailto:fady.esam.0101@gmail.com" target="_blank"> 
+    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" height="45" width="50" /> 
+</a> 
+</h5>
+
+
