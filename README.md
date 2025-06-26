@@ -1,7 +1,7 @@
 # 📚 Flutter Bookly App
 
-An elegant Flutter app for browsing and reading books integrated with RESTful API using the **Google Books API**.  
-Built with clean architecture, BLoC, and local caching using **Hive**.
+An elegant Flutter app for browsing and reading books integrated with RESTful API using the **Google Books API** and local caching using **Hive**.  
+Built with clean architecture for scalability and maintainability and BLoC pattern for predictable and scalable UI logic.
 
 ---
 
