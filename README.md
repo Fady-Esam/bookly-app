@@ -12,12 +12,12 @@ Built with clean architecture for scalability and maintainability and BLoC patte
 - 🏷️ Fetch Similar Books by Category to discover related books  
 - 🚦 Smooth Navigation & Routing with elegant transitions and deep linking using `go_router`  
 - 📖 View Detailed Book Information including title, author, description, rating, preview link, and more
-- 🗂️ Clean Architecture structure separating data, domain, and presentation layers for scalability and maintainability    
-- 🧠 Robust State Management built with the BLoC pattern for predictable and scalable UI logic  
 - 💾 Local Caching with `hive` for seamless offline support and faster access  
 - 📦 RESTful API Integration for real-time data from external book services  
 - 🎨 Custom UI Components for rich, and visually engaging book displays  
 - ✨ Animated Splash Screen with a smooth logo transition into the home screen interface  
+- 🗂️ Clean Architecture structure separating data, domain, and presentation layers for scalability and maintainability    
+- 🧠 Robust State Management built with the BLoC pattern for predictable and scalable UI logic  
 
 ---
 
