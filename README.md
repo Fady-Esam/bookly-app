@@ -7,12 +7,17 @@ Built with clean architecture, BLoC, and local caching using **Hive**.
 
 ## ✨ Features
 
-- 📚 Browse books featured, and best sellers
-- 📖 View Detailed Book Information includeing title, author, description, rating, preview links, and more
-- 💾 Caching locally with `hive` for offline support
-- 📦 RESTful API integration 
-- 🎨 Custom UI components for rich, elegant book displays
-- ✨ Splash Screen with smooth animation and transition to the home screen
+- 📚 Browse Featured and Best Seller books powered by the Google Books API  
+- 🔍 Advanced Book Search functionality by title with real-time results  
+- 🏷️ Fetch Similar Books by Category to discover related books  
+- 🚦 Smooth Navigation & Routing with elegant transitions and deep linking using `go_router`  
+- 📖 View Detailed Book Information including title, author, description, rating, preview link, and more
+- 🗂️ Clean Architecture structure separating data, domain, and presentation layers for scalability and maintainability    
+- 🧠 Robust State Management built with the BLoC pattern for predictable and scalable UI logic  
+- 💾 Local Caching with `hive` for seamless offline support and faster access  
+- 📦 RESTful API Integration for real-time data from external book services  
+- 🎨 Custom UI Components for rich, and visually engaging book displays  
+- ✨ Animated Splash Screen with a smooth logo transition into the home screen interface  
 
 ---
 
