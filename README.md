@@ -5,19 +5,16 @@ Built with **Clean Architecture** for scalability and maintainability and **BLoC
 
 ---
 
-## ✨ Features
+## ✨ Features & Highlights
 
 - 📚 Browse Featured and Best Seller books powered by the Google Books API  
 - 🔍 Advanced Book Search functionality by title with real-time results  
-- 🏷️ Fetch Similar Books by Category to discover related books  
-- 🚦 Smooth Navigation & Routing with elegant transitions and deep linking using `go_router`  
+- 🏷️ Discover similar books by category for smarter recommendations
 - 📖 View Detailed Book Information including title, author, description, rating, preview link, and more
-- 💾 Local Caching with `hive` for seamless offline support and faster access  
-- 📦 RESTful API Integration for real-time data from external book services  
-- 🎨 Custom UI Components for rich, and visually engaging book displays  
+- 💾 Offline support and faster access through local caching for seamless reading 
 - ✨ Animated Splash Screen with a smooth logo transition into the home screen interface  
-- 🗂️ Clean Architecture structure separating data, domain, and presentation layers for scalability and maintainability    
-- 🧠 Robust State Management built with the BLoC pattern for predictable and scalable UI logic  
+- 🚦 Smooth navigation and deep linking with elegant transitions and routing 
+- 🎨 Custom UI Components for rich, and visually engaging book displays  
 
 ---
 
