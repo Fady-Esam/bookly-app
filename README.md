@@ -5,7 +5,7 @@ Built with **Clean Architecture** for scalability and maintainability and **BLoC
 
 ---
 
-## ✨ Features & Highlights
+## ✨ Features
 
 - 📚 Browse Featured and Best Seller books powered by the Google Books API  
 - 🔍 Advanced Book Search functionality by title with real-time results  
